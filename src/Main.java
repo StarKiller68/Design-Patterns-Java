@@ -36,6 +36,7 @@ public class Main {
                     "Three objects DO NOT point to the same memory location on the heap");
         } */
 
+        /* Builder
         User user1 = new User.UserBuilder("Herman", "Breckenridge")
                 .age(30)
                 .phone("1234567")
@@ -58,6 +59,6 @@ public class Main {
                 //no address
                 .build();
 
-        System.out.println(user3);
+        System.out.println(user3);*/
     }
 }
