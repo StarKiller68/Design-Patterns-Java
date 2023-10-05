@@ -1,3 +1,4 @@
+import Builder.*;
 import Singleton.*;
 public class Main {
     public static void main(String[] args) {
@@ -34,5 +35,29 @@ public class Main {
             System.out.println(
                     "Three objects DO NOT point to the same memory location on the heap");
         } */
+
+        User user1 = new User.UserBuilder("Herman", "Breckenridge")
+                .age(30)
+                .phone("1234567")
+                .address("1234 Fake St.")
+                .build();
+
+        System.out.println(user1);
+
+        User user2 = new User.UserBuilder("Darth", "Vader")
+                .age(40)
+                .phone("9787")
+                //no address
+                .build();
+
+        System.out.println(user2);
+
+        User user3 = new User.UserBuilder("Khan", "Singh")
+                //No age
+                //No phone
+                //no address
+                .build();
+
+        System.out.println(user3);
     }
 }
