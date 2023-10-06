@@ -1,9 +1,12 @@
 import AbstractFactory.*;
 import AbstractFactory2.*;
 import Builder.*;
+import Builder2.*;
 import Factory.*;
 import Prototype.*;
 import Singleton.*;
+import Singleton2.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -49,7 +52,37 @@ public class Main {
                     "Three objects DO NOT point to the same memory location on the heap");
         } */
 
+        //illegal construct
+        //Compile Time Error: The constructor SingleObject() is not visible
+        //SingleObject object = new SingleObject();
+
+        /* Singleton 2
+        //Get the only object available
+        SingleObject object = SingleObject.getInstance();
+        SingleObject object1 = SingleObject.getInstance();
+
+        //show the message
+        object.showMessage();
+        object1.showMessage();
+
+        System.out.println("Hash Code for object 1 is :" + object.hashCode());
+        System.out.println("Hash Code for object 1 is :" + object1.hashCode());
+
+        System.out.println("Same hashCode means that both objects were created from the same" +
+                "instance. Therefore, behavior is as expected....");
+         */
+
+
+
         /* Builder
+
+        Builder pattern builds a complex object using simple objects and using a s
+        tep by step approach. This type of design pattern comes under creational pattern
+        as this pattern provides one of the best ways to create an object.
+
+        A Builder class builds the final object step by step. This builder is independent of other
+        objects.
+
         User user1 = new User.UserBuilder("Herman", "Breckenridge")
                 .age(30)
                 .phone("1234567")
@@ -81,7 +114,32 @@ public class Main {
         System.out.println("Factory Server Config::"+server);
         */
 
-        /*
+          /* Builder 2
+        MealBuilder mealBuilder = new MealBuilder();
+
+        Meal vegMeal = mealBuilder.prepareVegMeal();
+        System.out.println("Veg Meal");
+        vegMeal.showItems();
+        System.out.println("Total Cost: " + vegMeal.getCost());
+
+        Meal nonVegMeal = mealBuilder.prepareNonVegMeal();
+        System.out.println("\n\nNon-Veg Meal");
+        nonVegMeal.showItems();
+        System.out.println("Total Cost: " + nonVegMeal.getCost());
+         */
+
+        /* Prototype
+
+        Prototype pattern refers to creating duplicate object while keeping performance in mind.
+        This type of design pattern comes under creational pattern as this pattern provides
+        one of the best ways to create an object.
+
+        This pattern involves implementing a prototype interface which tells to create a clone
+         of the current object. This pattern is used when creation of object directly is costly.
+         For example, an object is to be created after a costly database operation. We can cache
+         the object, returns its clone on next request and update the database as and when needed
+         thus reducing database calls.
+
         try
         {
             String moviePrototype  = PrototypeFactory.getInstance(PrototypeFactory.ModelType.MOVIE).toString();
