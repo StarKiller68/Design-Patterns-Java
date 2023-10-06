@@ -4,6 +4,7 @@ import AbstractFactory2.Shape;
 import Builder.*;
 import Builder2.*;
 import Factory.*;
+import Factory2.*;
 import Prototype.*;
 import Prototype2.*;
 import Singleton.*;
@@ -13,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         /* Singleton
+
        // Singleton pattern is one of the simplest design patterns in Java. T
         //his type of design pattern comes under creational pattern as this pattern
         //provides one of the best ways to create an object.
@@ -59,6 +61,7 @@ public class Main {
         //SingleObject object = new SingleObject();
 
         /* Singleton 2
+
         //Get the only object available
         SingleObject object = SingleObject.getInstance();
         SingleObject object1 = SingleObject.getInstance();
@@ -109,14 +112,8 @@ public class Main {
 
         System.out.println(user3);*/
 
-        /* Factory
-        Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
-        Computer server = ComputerFactory.getComputer("server","16 GB","1 TB","2.9 GHz");
-        System.out.println("Factory PC Config::"+pc);
-        System.out.println("Factory Server Config::"+server);
-        */
+        /* Builder 2
 
-          /* Builder 2
         MealBuilder mealBuilder = new MealBuilder();
 
         Meal vegMeal = mealBuilder.prepareVegMeal();
@@ -130,6 +127,30 @@ public class Main {
         System.out.println("Total Cost: " + nonVegMeal.getCost());
          */
 
+        /* Factory
+
+        //Factory pattern is one of the most used design patterns in Java.
+        //This type of design pattern comes under creational pattern as this
+        //pattern provides one of the best ways to create an object.
+
+        //In Factory pattern, we create object without exposing the creation logic to the
+        //client and refer to newly created object using a common interface.
+
+        Computer pc = ComputerFactory.getComputer("pc","2 GB","500 GB","2.4 GHz");
+        Computer server = ComputerFactory.getComputer("server","16 GB","1 TB","2.9 GHz");
+        System.out.println("Factory PC Config::"+pc);
+        System.out.println("Factory Server Config::"+server);
+        */
+
+        /* Factory 2
+
+        NotificationFactory notificationFactory = new NotificationFactory();
+        Notification notification = notificationFactory.createNotification("SMS");
+        notification.notifyUser();
+
+         */
+
+        
         /* Prototype
 
         Prototype pattern refers to creating duplicate object while keeping performance in mind.
@@ -159,11 +180,12 @@ public class Main {
             e.printStackTrace();
         }
          */
-
+        /* Prototype 2
         ColorStore.getColor("blue").addColor();
         ColorStore.getColor("black").addColor();
         ColorStore.getColor("black").addColor();
         ColorStore.getColor("blue").addColor();
+         */
 
 
 
@@ -183,7 +205,8 @@ public class Main {
         System.out.println(CarFactory.buildCar(CarType.MINI));
         System.out.println(CarFactory.buildCar(CarType.LUXURY));
          */
-        /*
+
+        /* Abstract Factory 2
         //get shape factory
         AbstractFactory shapeFactory = FactoryProducer.getFactory(false);
         //get an object of Shape Rectangle
