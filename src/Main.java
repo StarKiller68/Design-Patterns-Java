@@ -1,9 +1,11 @@
 import AbstractFactory.*;
 import AbstractFactory2.*;
+import AbstractFactory2.Shape;
 import Builder.*;
 import Builder2.*;
 import Factory.*;
 import Prototype.*;
+import Prototype2.*;
 import Singleton.*;
 import Singleton2.*;
 
@@ -157,6 +159,13 @@ public class Main {
             e.printStackTrace();
         }
          */
+
+        ColorStore.getColor("blue").addColor();
+        ColorStore.getColor("black").addColor();
+        ColorStore.getColor("black").addColor();
+        ColorStore.getColor("blue").addColor();
+
+
 
         /* Abstract Factory 1
         //Abstract Factory patterns work around a super-factory
